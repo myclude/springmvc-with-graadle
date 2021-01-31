@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+}
+
+group 'me.myclude'
+version '1.0-SNAPSHOT'
+
+ext {
+    springVersion = "5.2.3.RELEASE"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    implementation "org.springframework:spring-webmvc:${springVersion}"
+    implementation "org.springframework:spring-context:${springVersion}"
+
+    //thymeleaf
+    implementation "org.thymeleaf:thymeleaf-spring5:3.0.12.RELEASE"
+
+    //log
+    implementation "org.slf4j:slf4j-api:1.7.30"
+    implementation "org.slf4j:jcl-over-slf4j:1.7.30"
+    implementation "ch.qos.logback:logback-classic:1.2.3"
+    implementation "commons-logging:commons-logging:1.2"
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+test {
+    useJUnitPlatform()
+}
